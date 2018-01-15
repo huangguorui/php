@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div:nth-child(1){
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+
+        div:nth-child(2){
+            margin-top:100px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+<div id="div2" draggable="true" data-img="0">2222</div>
+
+<div id="div1"></div>
+
+
+
+
+<script>
+    /*
+    * 1、被拖拽对象
+    *       ondragstart
+    *
+    *
+    *
+    *
+    *
+    *
+    * 2、目标对象
+    *
+    *
+    *
+    * */
+
+
+    div2.ondragstart=function(e){
+        console.log(e.target);
+        console.log(222);
+        objs = e.target;
+    }
+
+
+    /*2、目标对象*/
+
+
+    div1.ondragover=function(e){
+        console.log(2);
+        e.preventDefault()     /*必须*/
+    }
+
+    div1.ondrop=function(e){
+        if(objs.dataset['img']==0);
+        console.log(4);
+    }
+
+
+
+</script>
+</body>
+</html>
