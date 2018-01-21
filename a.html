@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<button id="1"></button>
+<button id="2"></button>
+<button id="3"></button>
+<button id="4"></button>
+<button id="5"></button>
+</body>
+</html>
+
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$('button').click(function(){
+    console.log($(this).attr("id"));
+
+
+})
+
+var curID=111;
+$(document).click(function(){
+ $.ajax({
+        type:"post",
+        url:"index",
+        data: {"id":curID},
+        dataType:"json",
+        success:function(msg){
+        }
+
+
+     })
+
+
+
+
+
+
+})
+
+
+</script>
