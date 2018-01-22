@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				transition: all .6s;
+			}
+
+			#left-fixed {
+				position: fixed;
+				/* left: -275px; */
+				top: 20%;
+				width: 300px;
+				padding: 20px;
+				height: auto;
+				border-radius: 5px;
+				background-color: #ccc;
+				transition: all .6s;
+			}
+
+			#left-fixed:hover {
+				left: 0;
+				background-color: pink;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			img {
+				border: 0;
+			}
+
+			ol,
+			ul,
+			li {
+				list-style: none;
+			}
+
+			h4 {
+				text-align: center;
+				font-size: 40px;
+				margin: 20px 0;
+				text-shadow: 0 0 10px #ccc;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h4>您可以点击切换桌面</h4>
+
+		<div id="left-fixed">
+			<!-- <input type="submit" id="switchGo" value="关灯"> -->
+			<label for="inputs">改变背景色：</label>
+			<input type="color" class="form-control" id="inputs">
+			<br />
+			<button type="" class="form-control" id="buttons">确定</button>
+			<div>
+				<label for="linear-deg">改变小盒子的渐变角度</label>
+				<input type="number" class="form-control" id="linear-deg" max="360" placeholder="输入的数值大于360无效">
+				<label for="linear-bgc">改变小盒子的渐变颜色（1）</label>
+				<input type="color" class="form-control" id="linear-bgc">
+				<label for="linear-bgc1">改变小盒子的渐变颜色（2）</label>
+				<input type="color" class="form-control" id="linear-bgc1">
+				<br />
+				<button type="" class="form-control" id="btn-linear-bgc">确定</button>
+				<br>
+				<input type="submit" class="form-control" name="" value="点击清空" onclick="window.location.href=''">
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	/*开关灯--开始*/
+/*	var switchGo = document.getElementById("switchGo");
+	var i = -1;
+	switchGo.onclick = function() {
+		i++;
+		if(i == 0) {
+			document.body.style.background = "#000";
+			this.value = "开灯";
+		}
+		if(i == 1) {
+			document.body.style.background = "#fff";
+			this.value = "关灯";
+			i = -1;
+		}
+	}*/
+	/*开关灯--结束*/
+
+	/*这里是渐变部分的实现--开始*/
+	var linearBgc = document.getElementById("linear-bgc");
+	var linearBgc1 = document.getElementById("linear-bgc1");
+	var btnLinearBgc = document.getElementById("btn-linear-bgc");
+	var linearDeg = document.getElementById("linear-deg");
+
+	var h4s = document.getElementsByTagName("h4");
+
+	/*单种颜色的切换*/
+	var buttons=document.getElementById("buttons");
+
+	var colorOne="#000";
+	inputs.onmouseout=function(){
+		//document.body.style.backgroundColor=colorOne;
+		colorOne=this.value;
+
+		//alert(colorOne);
+		//弹窗测试是否有效果
+	}
+
+
+	buttons.onclick=function(){
+
+
+				document.body.style.background = "linear-gradient(" + 0 + "deg" + "," + colorOne + "," + colorOne + ")";
+
+
+	}
+
+	btnLinearBgc.onclick = function() {
+		var color = linearBgc.value;
+		var color1 = linearBgc1.value;
+
+		var numberDeg = linearDeg.value;
+		console.log(numberDeg);
+		boxColor(numberDeg, color, color1);
+
+	}
+
+	function boxColor(numberDeg, color, color1) {
+		for(var i = 0; i < h4s.length; i++) {
+			if(numberDeg == "")
+				/**/
+				h4s[i].parentNode.style.background = "linear-gradient(" + color + "," + color1 + ")";
+			else
+				h4s[i].parentNode.style.background = "linear-gradient(" + numberDeg + "deg" + "," + color + "," + color1 + ")";
+		}
+	}
+
+</script>
