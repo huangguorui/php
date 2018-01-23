@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    body {
+        margin:50px;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border:0;
+    }
+    ol, ul ,li{list-style: none;}
+    div{
+        width:100px;
+        height: 100px;
+        background: red;
+    }
+
+    </style>
+</head>
+<body>
+<input type="text" value="11" id="box" name="" >
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+box.onclick=function(){
+
+
+/*
+定义和用法
+setAttribute() 方法添加指定的属性，并为其赋指定的值。
+
+如果这个指定的属性已存在，则仅设置/更改值。
+
+ */
+
+console.log(box.setAttribute("data-aaa","cccc"));
+/*
+定义和用法
+getAttribute() 方法返回指定属性名的属性值。
+
+提示：如果您希望以 Attr 对象返回属性，请使用 getAttributeNode。
+
+ */
+/*有值显示的是获取到的属性值*/
+console.log(box.getAttribute("data-aaa"));
+
+
+/*因为已经删除了，所以显示的是undefined*/
+
+//console.log(box.removeAttribute("data-aaa"));
+}
+
+/*
+总结：
+setAttribute的作用为添加元素
+getAttribute的作用为获取元素
+removeAttribute的作用为删除元素
+
+ */
+
+
+</script>

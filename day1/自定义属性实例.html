@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+         div {
+            width:200px;
+            height: 100px;
+            background: #ccc;
+            border-radius: 5%;
+            margin: 1%;
+            float:left;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div data-cars="4" bbb-money="999" ddd="bbb">
+
+</div>
+<div data-cars="3" data-money="888">
+
+</div>
+<div data-cars="4" data-money="999">
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+var div=document.getElementsByTagName("div");
+     /*需求如下，我们需要将自定义的属性显示在每个方框中*/
+
+     for(var i=0;i<div.length;i++){
+        /*查看是否获取到了自定义属性的值*/
+        console.log(div[i].dataset['cars']);
+        var cars = div[i].dataset['cars'];
+        var money = div[i].dataset['money'];
+        console.log(money);
+        //div[i].innerHTML="一共还剩下:"+cars+"辆车"+"一辆车需要:"+money+"元";
+
+     }
+        div[0].innerHTML="<div>111</div>";
+
+     /*
+    innerHTML表示添加的是htmL的结构的东西，是会被浏览器解析掉的
+    innerText表示的是添加的是文本内容，如果你添加的是div标签也是不会被浏览器解析的
+
+    两者的不同：
+        第一个浏览器会把里面的标签解析掉，第二个不会
+
+    dataset： 表示的是获取到自定义属性的值，自定义属性一般以"data-",如果不是的，使用该方法就会报错
+      */
+
+</script>
