@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+function distinct(arr){
+  //声明初始值，len表示数组个数
+  var  result = [],i,j,len = arr.length;
+
+
+  /*利用数组个数开始遍历*/
+  for(i = 0; i < len; i++){
+    //里面的数组小标比外面的数组下标大一
+    for(j = i + 1; j < len; j++){
+      //如果他们相等的话
+      if(arr[i] === arr[j]){
+        //就在判断在同一个数组中的这个值arr[i]还有没有相同的值
+        j = ++i;
+      }
+    }
+    /*将挑选完成的值放入到数组中*/
+    result.push(arr[i]);
+  }
+  return result;
+}
+var arra = [999,888,999,888,777,555,66,888,55];
+distinct(arra);       //返回[3,4,2,1]
+console.log(distinct(arra));
+</script>
