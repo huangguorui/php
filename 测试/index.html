@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<title>Olympic Race - Brazil 2015</title>
+</head>
+<body style="overflow: none;">
+	<!-- START -->
+	<div id="start">
+		<div class="box">
+			<h3>Welcome!</h3>
+			<p>
+				Welcome to the Olympic Race!, In  this game you will visit many beautiful places from Brazil!
+			</p>
+			<p>
+				You must use the keys <strong>"UP"</strong> and <strong>"DOWN"</strong> to change the runway
+			</p>
+			<p>
+				You must use the <strong>"SPACE"</strong> button to jump
+			</p>
+			<p>
+				Your goal is to reach the end of the ride, dodging all the obstacles (jumping or changing the runway)
+			</p>
+			<form action="#" method="post" >
+				<button type="submit" class='btn btn-start' id="startButton" >START</button>
+			</form>
+		</div>
+	</div><!-- END START -->
+
+	<!-- END -->
+
+	<div id="end" class="hide">
+		<div class="box">
+			<div class="error">
+				<h3>Game Over</h3>
+				<p>You didn't visited all the places... try again!</p>
+			</div>
+			<div class="success">
+				<h3>Welcome to the Rio 2016 – Olympic Games!</h3>
+				<p>You already visited beautifuls places from BRAZIL!</p>
+				<p>You can visit again pressing the Restart Button!</p>
+			</div>
+			<form action="#" method="post" >
+				<button type="submit" class='btn btn-start game" ' id="" >重新开始</button>
+				<button type="submit" class='btn btn-start over" ' id="restartButton" style="display:none">游戏结束</button>
+
+			</form>
+		</div>
+	</div><!-- END END -->
+
+	<!--  游戏运动背景 -->
+	<section id="game">
+		<!-- POINTS -->
+		<div id="points">
+
+			<!-- INIT -->
+			<section id="init">
+				<img src="imgs/sky.svg" alt="sky" />
+			</section><!-- END INIT -->
+
+
+			<!-- AMAZON -->
+			<section id="amazon">
+				<img src="imgs/amazon.svg" alt="amazon" />
+			</section><!-- END AMAZON -->
+
+
+			<!-- BAHIA -->
+			<section id="bahia">
+				<img src="imgs/bahia.svg" alt="bahia" />
+			</section><!-- END BAHIA -->
+
+
+			<!-- PARANA -->
+			<section id="parana">
+				<img src="imgs/parana.svg" alt="parana" />
+			</section><!-- END PARANA -->
+
+
+			<!-- SAOPAULO -->
+			<section id="saopaulo">
+				<img src="imgs/saopaulo.svg" alt="saopaulo" />
+			</section><!-- END SAOPAULO -->
+
+
+			<!-- RIO -->
+			<section id="rio">
+				<img src="imgs/rio.svg" alt="rio" />
+			</section><!-- END RIO -->
+
+		</div><!-- END POINTS -->
+
+		<!-- 圣火 -->
+		<section id="pyre">
+			<img src="imgs/pyre.svg" alt="pyre" id="pyreIMG" />
+			<div class="panel">
+				Olympic Games – Rio 2016
+			</div>
+		</section><!-- END PYRE -->
+
+		<!-- 树木背景 -->
+		<div id="playground">
+			<!-- PANELS -->
+			<div id="panels">
+				<h4 id="amazonPanel" class="panel">Amazon Forest – Manaus – AM</h4>
+				<h4 id="amazonPanel" class="panel">Lacerda Elevator – Salvador – BA</h4>
+				<h4 id="paranaPanel" class="panel">Iguaçu Falls  – Foz do Iguaçu – PR</h4>
+				<h4 id="saopauloPanel" class="panel">Cable Stayed Bridge – São Paulo – SP</h4>
+				<h4 id="rioPanel" class="panel">Christ the Redeemer – Rio de Janeiro – RJ</h4>
+			</div><!-- END PANELS -->
+
+			<!-- 运动员 -->
+			<div id="runner">
+				<img src="imgs/runner.svg" alt="runner" id="runnerIMG">
+			</div><!-- END RUNNER -->
+
+			<!-- 跑道 -->
+			<div id="runways">
+				<!-- 1跑道 -->
+				<div id="runway1" class="runway">
+					<span class="obstacle"></span>
+				</div>
+				<!-- 2跑道 -->
+				<div id="runway2" class="runway">
+					<span class="obstacle"></span>
+				</div>
+				<!-- 3跑道 -->
+				<div id="runway3" class="runway">
+					<span class="obstacle"></span>
+					<span class="obstacle"></span>
+					<span class="obstacle"></span>
+				</div>
+			</div><!-- END RUNWAYS -->
+
+
+		</div><!-- END PLAYGROUND -->
+
+	</section><!--  END GAME -->
+
+	<!-- SCRIPTS -->
+	<style type="text/css">
+	#points #amazon,#points #bahia,#points #parana,#points #saopaulo,#points #rio {
+		display: none;
+	}
+	
+	#playground .panel
+	 {
+		display: none;
+	}
+	/*  {
+			display: none;
+		} */
+	body {
+		overflow: hidden;
+	}
+		#runway1 .obstacle{
+			margin-left:450px;
+		}
+		#runway2 .obstacle{
+			margin-left:900px;
+		}
+		#runway3 .obstacle {
+			display: inline-block;
+		}
+		#runway3 .obstacle:nth-child(1){
+			margin-left:450px;
+		}
+		#runway3 .obstacle:nth-child(2){
+			margin-left:900px;
+		}
+		#runway3 .obstacle:nth-child(3){
+			margin-left:1350px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
+	
+	<script type="text/javascript" src='js/script.js'></script>
+	<script src="js/game.js"></script>
+</body>
+</html>
+
+
